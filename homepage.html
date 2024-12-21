@@ -1,0 +1,470 @@
+<style>
+  * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'POPPINS', serif;
+  }
+
+  html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Georgia', serif;
+      background-image: url('grid_brown.jpg');
+      color: #372b1d;
+      display: flex;
+      flex-direction: column;
+  }
+
+  .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #f8f4ef;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #ddd;
+  }
+
+  .header a {
+      color: #634b1a;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+      margin: 0 10px;
+      padding: 10px 10px;
+      border-radius: 15px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .header a:hover {
+      background-color: #99756d;
+      color: #fff;
+  }
+
+  .main-banner {
+        background-image: url('banner.jpg');
+        position: relative;
+        padding: 80px 50px;
+        text-align: center;
+        clip-path: polygon(0 0, 100% 0, 100% 70%, 0 85%);
+    }
+
+    .main-banner h1 {
+        font-size: 4rem;
+        color: white;
+        margin-bottom: 40px;
+    }
+
+    .main-banner p {
+        font-family: Brush Script MT, Brush Script Std, cursive;
+        font-size: 1.4rem;
+        color: white;
+    }
+
+
+    .image-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin: 20px auto;
+    }
+
+    .image-row img {
+        width: 180px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 8px 10px 8px rgba(0, 0, 0, 0.2);
+        transform: rotate(-3deg);
+        transition: transform 0.3s ease;
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+    }
+
+    .image-row img:hover {
+        transform: rotate(0);
+    }
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+    }
+
+
+    .butterfly-decor, .flower-decor-left, .moon-decor-right, .quote-decor {
+        position: absolute;
+        opacity: 0;
+        animation: fadeIn 3s forwards;
+    }
+
+    .butterfly-decor {
+        margin-right: 20px;
+        bottom: 50px;
+        left: 280px;
+        width: 200px;
+        animation-delay: 1s;
+    }
+
+    .flower-decor-left {
+        top: 50px;
+        left: 20px;
+        width: 300px;
+        animation-delay: 1s;
+    }
+
+    .moon-decor-right {
+        top: 80px;
+        right: 8px;
+        width: 300px;
+        animation-delay: 1.5s;
+    }
+
+    .quote-decor {
+        margin-left: 20px;
+        bottom: 30px;
+        right: 20px;
+        width: 300px;
+        animation-delay: 2s;
+    }
+
+    .clock-notes-container {
+        position: fixed;
+        left: 50px;
+        bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 100;
+        cursor: grab;
+        width: 180px;
+        background-color: rgba(153, 117, 109, 0.9);
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .clock {
+        background-color: #99756d;
+        color: #ffffff;
+        padding: 5px 10px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .notes {
+        background-color: #794f4e;
+        padding: 5px;
+        border-radius: 8px;
+        color: #ffffff;
+    }
+
+    .notes textarea {
+        width: 100%;
+        height: 40px;
+        border: none;
+        border-radius: 8px;
+        padding: 5px;
+        font-size: 0.8rem;
+        margin-bottom: 5px;
+    }
+
+    .notes button {
+        background-color: #584215;
+        color: #ffffff;
+        border: none;
+        border-radius: 8px;
+        padding: 5px 10px;
+        cursor: pointer;
+        font-size: 0.8rem;
+    }
+
+    .notes button:hover {
+        background-color: #372b1d;
+    }
+
+    .notes-list {
+        margin-top: 10px;
+        background-color: #ffffff;
+        color: #372b1d;
+        padding: 10px;
+        border-radius: 8px;
+        max-height: 150px;
+        overflow-y: auto;
+        font-size: 0.8rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+
+    audio {
+        width: 100%;
+        height: 40px;
+        border-radius: 8px;
+        margin-top: 5px;
+    }
+
+    footer {
+        background-color: rgba(153, 117, 109, 0.95);
+        color: #372b1d;
+        padding: 6px 0;
+        text-align: center;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        margin-top: auto;
+    }
+
+    footer a {
+        color: #584215;
+        text-decoration: none;
+    }
+
+    footer a:hover {
+        color: yellow;
+        text-decoration: underline;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+        .header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .header a {
+            margin: 5px 0;
+        }
+
+        .main-banner h1 {
+            font-size: 2.5rem;
+        }
+
+        .main-banner p {
+            font-size: 1.2rem;
+        }
+
+        .image-row img {
+            width: 140px;
+        }
+
+        .butterfly-decor, .flower-decor-left, .moon-decor-right, .quote-decor {
+            width: 150px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .main-banner {
+            padding: 50px 20px;
+        }
+
+        .main-banner h1 {
+            font-size: 2rem;
+        }
+
+        .main-banner p {
+            font-size: 1rem;
+        }
+
+        .image-row img {
+            width: 100px;
+        }
+
+        .clock-notes-container {
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            padding: 5px;
+        }
+
+        .clock, .notes {
+            font-size: 0.8rem;
+        }
+    }
+
+    footer {
+      background-color: rgba(153, 117, 109, 0.95);
+      color: #372b1d;
+      padding: 6px 0;
+      text-align: center;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+      margin-top: auto;
+    }
+
+    footer a {
+      color: #584215;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: yellow;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<script>
+    window.onload = function () {
+      const userConfirmed = confirm("Are you sure to continue to this page?");
+      if (!userConfirmed) {
+        window.close(); // Close the tab if the user clicks "No"
+      }
+    };
+  </script>
+
+
+  <div class="header">
+    <div class="logo">AYA SPACE</div>
+    <nav>
+      <a href="homepage.html">Home</a>
+      <a href="biodata.html">Biodata</a>
+      <a href="experience.html">Experience</a>
+      <a href="education.html">Education</a>
+      <a href="family.html">Family</a>
+      <a href="friend.html">Friends</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="other.html">Contact Me</a>
+    </nav>
+  </div>
+
+  <div class="main-banner">
+    <h1>Welcome to My Personal Website</h1>
+    <p>A girl living her biggest, messiest dreams.</p>
+  </div>
+
+  <img src="image/dry1.png" alt="Flower" class="flower-decor-left">
+  <div class="image-row">
+    <img src="image/mehihi.jpg" alt="mehihi">
+    <img src="image/gambar1.jpg" alt="mehihi">
+    <img src="image/mehehe.jpg" alt="mehihi">
+    <img src="image/mehuhu.jpg" alt="mehihi">
+  </div>
+
+  <div class="clock-notes-container" id="draggable">
+    <div class="clock" id="clock"></div>
+    <div class="notes">
+      <textarea id="notes" placeholder="Leave a comment..."></textarea>
+      <button onclick="submitComment()">Submit</button>
+      <div class="notes-list" id="notes-list">
+
+      </div>
+    </div>
+    <audio controls>
+      <source src="audio/song1.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <img src="image/butterfly.png" alt="Butterfly" class="butterfly-decor">
+  <img src="image/moon.png" alt="Moon" class="moon-decor-right">
+  <img src="image/quote.png" alt="Quote" class="quote-decor">
+
+  <footer>
+    <p>&copy; 2024 Alya Batrisyia Binti Mohd Zawawi. All Rights Reserved.</p>
+    <p>Contact: <a href="mailto:batrisyiazawawi@gmail.com">batrisyiazawawi@gmail.com</a></p>
+  </footer>
+
+<script>
+    function updateClock() {
+        const clockElement = document.getElementById('clock');
+        const now = new Date();
+        clockElement.textContent = now.toLocaleTimeString();
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    const notesListElement = document.getElementById('notes-list');
+    const notesKey = 'userNotes';
+
+    function loadNotes() {
+        const savedNotes = JSON.parse(localStorage.getItem(notesKey)) || [];
+        savedNotes.forEach((note, index) => {
+            addNoteToList(note, index);
+        });
+    }
+
+    function saveNotes(notes) {
+        localStorage.setItem(notesKey, JSON.stringify(notes));
+    }
+
+    function getNotes() {
+        return JSON.parse(localStorage.getItem(notesKey)) || [];
+    }
+
+    function addNoteToList(note, index) {
+        const noteElement = document.createElement('p');
+        noteElement.textContent = note;
+        noteElement.dataset.index = index; // Track index for editing
+        noteElement.classList.add('note-item');
+
+        // Double-click to edit note
+        noteElement.addEventListener('dblclick', function () {
+            const currentNotes = getNotes();
+            const currentNote = currentNotes[index];
+
+            // Prompt the user for new text
+            const updatedNote = prompt('Edit your note:', currentNote);
+            if (updatedNote !== null) {
+                currentNotes[index] = updatedNote.trim();
+                saveNotes(currentNotes);
+
+                // Update the note in the DOM
+                this.textContent = updatedNote.trim();
+            }
+        });
+
+        notesListElement.appendChild(noteElement);
+    }
+
+    function submitComment() {
+        const notesElement = document.getElementById('notes');
+        const noteText = notesElement.value.trim();
+
+        if (noteText) {
+            const currentNotes = getNotes();
+            currentNotes.push(noteText);
+            saveNotes(currentNotes);
+
+            // Add the new note to the DOM
+            addNoteToList(noteText, currentNotes.length - 1);
+
+            // Clear the input field
+            notesElement.value = '';
+        } else {
+            alert('Please write something before submitting.');
+        }
+    }
+
+    loadNotes();
+
+    const draggable = document.getElementById('draggable');
+
+    draggable.addEventListener('mousedown', (e) => {
+        let shiftX = e.clientX - draggable.getBoundingClientRect().left;
+        let shiftY = e.clientY - draggable.getBoundingClientRect().top;
+
+        function moveAt(pageX, pageY) {
+            draggable.style.left = pageX - shiftX + 'px';
+            draggable.style.top = pageY - shiftY + 'px';
+        }
+
+        function onMouseMove(event) {
+            moveAt(event.pageX, event.pageY);
+        }
+
+        document.addEventListener('mousemove', onMouseMove);
+
+        draggable.addEventListener('mouseup', () => {
+            document.removeEventListener('mousemove', onMouseMove);
+            draggable.onmouseup = null;
+        });
+
+        draggable.ondragstart = () => false;
+    });
+</script>
+
+</body>
+</html>

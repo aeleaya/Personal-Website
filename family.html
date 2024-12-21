@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-image: url('grid_brown.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            color: #372b1d;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+            background-color: rgba(153, 117, 109, 0.95);
+            position: sticky;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 250px;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 18px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #6c3a1f, #9c6747);
+            text-align: center;
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .header a:hover {
+            background: linear-gradient(135deg, #fcf19a, #ffbf77);
+            color: #6c3a1f;
+            transform: scale(1.1);
+        }
+
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 30px;
+            margin: auto;
+            width: 100%;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+	    margin-top: 20px;
+            font-size: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #5d4037;
+            text-align: center;
+        }
+
+        .family-options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .option {
+            background-color: #c1aca7;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 250px;
+            height: 350px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .option:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .option img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .option h3 {
+            font-size: 1.5rem;
+            font-family: 'Georgia', serif;
+            margin-top: 10px;
+        }
+
+        .details {
+            display: none; /* Initially hide all details */
+            margin: 20px auto;
+            width: 80%;
+            background-color: #c1aca7;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            font-family: 'Georgia', serif;
+        }
+
+        .details h2 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: #372b1d;
+            text-align: center;
+        }
+
+        .details ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        .details ul li {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .details img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin: 5px;
+        }
+
+        .details .sibling {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+        }
+
+        .details .sibling img {
+            width: 120px;
+            height: 120px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-left: 5px;
+        }
+
+        .details .sibling div ul {
+            list-style: none;
+            padding: 0;
+            font-size: 1.1rem;
+        }
+
+        .details .sibling div ul li {
+            margin: 5px 0;
+        }
+
+        .details .sibling div ul li strong {
+            color: #584215;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <a href="homepage.html">Homepage</a>
+        <a href="biodata.html">Biodata</a>
+        <a href="experience.html">Experience</a>
+        <a href="education.html">Education</a>
+        <a href="family.html">Family</a>
+        <a href="friend.html">Friends</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="other.html">Contact Me</a>
+    </div>
+
+    <div class="main-content">
+        <h1>Family</h1>
+
+        <div class="family-options">
+            <div class="option" onclick="showDetails('mother')">
+                <img src="image/ibu1.jpg" alt="Mother">
+                <h3>Mother</h3>
+            </div>
+            <div class="option" onclick="showDetails('father')">
+                <img src="image/ayah1.jpg" alt="Father">
+                <h3>Father</h3>
+            </div>
+            <div class="option" onclick="showDetails('siblings')">
+                <img src="image/sibs.jpg" alt="Siblings">
+                <h3>Siblings</h3>
+            </div>
+            <div class="option" onclick="showDetails('meowser')">
+                <img src="image/moja3.jpg" alt="Meowser">
+                <h3>Meowser</h3>
+            </div>
+        </div>
+
+        <div id="mother" class="details">
+            <h2>Mother</h2>
+            <img src="image/ibu.jpg" alt="Mother">
+            <img src="image/ibu2.jpg" alt="Mother">
+            <ul>
+                <li><strong>Name:</strong> Noor Azidah binti Abdul Aziz</li>
+                <li><strong>Age:</strong> 52</li>
+                <li><strong>Occupation:</strong> English Teacher</li>
+                <li><strong>Personality:</strong> Introvert</li>
+            </ul>
+        </div>
+
+        <div id="father" class="details">
+            <h2>Father</h2>
+            <img src="image/ayah3.jpg" alt="Father">
+            <img src="image/ayah4.jpg" alt="Father">
+            <ul>
+                <li><strong>Name:</strong> Mohd Zawawi bin Ismail</li>
+                <li><strong>Age:</strong> 52</li>
+                <li><strong>Occupation:</strong> Contractor</li>
+                <li><strong>Personality:</strong> Introvert</li>
+            </ul>
+        </div>
+
+        <div id="siblings" class="details">
+            <h2>Siblings</h2>
+
+            <div class="sibling">
+                <div>
+                    <ul>
+                        <li><strong>1.</strong> Eldest Sister</li>
+                        <li><strong>Name:</strong> Alya Irdina Mohd Zawawi</li>
+                        <li><strong>Occupation:</strong> Nurse</li>
+                    </ul>
+                </div>
+                <img src="image/inabiru.jpeg" alt="Eldest Sister"> 
+                <img src="image/inaputih.jpeg" alt="Eldest Sister">
+            </div>
+
+            <div class="sibling">
+                <div>
+                    <ul>
+                        <li><strong>2.</strong> Oldest Brother</li>
+                        <li><strong>Name:</strong> Muhammad Ifran Mohd Zawawi</li>
+                        <li><strong>Occupation:</strong> Student at Politeknik Kota Bharu</li>
+                        <li><strong>Course:</strong> Electrical Engineering</li>
+                    </ul>
+                </div>
+                <img src="image/ee1.jpeg" alt="Oldest Brother"> 
+                <img src="image/mini.jpg" alt="Oldest Brother"> 
+            </div>
+
+            <div class="sibling">
+                <div>
+                    <ul>
+                        <li><strong>3.</strong> Younger Brother</li>
+                        <li><strong>Name:</strong> Muhammad Izhan Mohd Zawawi</li>
+                        <li><strong>Occupation:</strong> Student at UiTM Dungun</li>
+                        <li><strong>Course:</strong> Food Service</li>
+                    </ul>
+                </div>
+                <img src="image/ang1.jpg" alt="Younger Brother">
+                <img src="image/ang3.jpg" alt="Younger Brother">
+                <img src="image/ang4.jpg" alt="Younger Brother">
+            </div>
+
+            <div class="sibling">
+                <div>
+                    <ul>
+                        <li><strong>4.</strong> Younger Brother</li>
+                        <li><strong>Name:</strong> Muhammad Irham Mohd Zawawi</li>
+                        <li><strong>Occupation:</strong> Highschool Student</li>
+                        <li><strong>Course:</strong> Business</li>
+                    </ul>
+                </div>
+                <img src="image/menihang.jpg" alt="Younger Brother">
+            </div>
+        </div>
+
+        <div id="meowser" class="details">
+            <h2>Meowser</h2>
+            <div class="meowser-images">
+                <ul>
+                    <li><strong>1. Name:</strong> Moja</li>
+                    <li><img src="image/menmoja.jpg" alt="Moja"> 
+                        <img src="image/moja1.jpg" alt="Moja"> 
+                        <img src="image/moja2.jpg" alt="Moja">
+                    </li>
+                </ul>
+                <ul>
+                    <li><strong>2. Name:</strong> Momo</li>
+                    <li><img src="image/momo1.jpg" alt="Momo">
+                    <img src="image/momo2.jpg" alt="Momo">
+                    <img src="image/momo3.jpg" alt="Momo">
+</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function showDetails(id) {
+            const details = document.querySelectorAll('.details');
+            details.forEach(detail => {
+                detail.style.display = 'none';
+            });
+
+            const target = document.getElementById(id);
+            target.style.display = 'block';
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
+

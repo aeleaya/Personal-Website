@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Social Media</title>
+    <style> 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+body {
+    font-family: 'Georgia', serif;
+    background-image: url('grid_brown.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;        
+    overflow-y: auto; /* Allow scrolling */
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+}
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+            background-color: rgba(153, 117, 109, 0.95);
+            position: sticky;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 250px;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 18px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #6c3a1f, #9c6747);
+            text-align: center;
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .header a:hover {
+            background: linear-gradient(135deg, #fcf19a, #ffbf77);
+            color: #6c3a1f;
+            transform: scale(1.1);
+        }
+
+
+.main-content {
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: none; /* Allow scrolling for the main content if needed */
+}
+
+        h1 {
+            margin-bottom: 10px;
+            font-size: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+	    color: #5d4037;
+        }
+
+        .social-media {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px; /* Smaller gap */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .social-media a {
+            display: inline-block;
+        }
+
+        .social-media img {
+            width: 80px; /* Smaller size */
+            height: 80px; /* Smaller size */
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .social-media img:hover {
+            transform: scale(1.1);
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #372b1d;
+        }
+
+        .contact-form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .contact-form button {
+            background-color: #584215;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #fcf19a;
+            color: #372b1d;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="homepage.html">Homepage</a>
+        <a href="biodata.html">Biodata</a>  
+        <a href="experience.html">Experience</a>
+        <a href="education.html">Education</a>
+        <a href="family.html">Family</a>
+        <a href="friend.html">Friends</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="other.html">Contact Me</a>
+    </div>
+
+    <div class="main-content">
+        <h1>My Social Media</h1>
+
+        <div class="social-media">
+            <a href="https://www.instagram.com/aeleaiwaiwaiaa/profilecard/?igsh=aG40aHBkc2hwNGJ3"><img src="image/ig3.png"></a>
+
+            <a href="https://www.tiktok.com/@yaadupaincheng?_t=8rVJVlgHPgA&_r=1"><img src="image/tt.png"></a>
+
+            <a href="https://open.spotify.com/playlist/6ycJVspcSus3wcM2HcQGAA?si=B-71S3VYRKKXSP-mGQIrwQ&pi=a-EMbbha-sTQ2M"><img src="image/spoti.png"></a>
+
+            <a href="https://www.facebook.com/batrisyia.zawawi.3?mibextid=LQQJ4d"><img src="image/fb.png"></a>
+
+            <a href="https://snapchat.com/t/AfLuULSf"><img src="image/snap.png"></a>
+
+            <a href="https://wa.me/60175274609/"><img src="image/ws2.png"></a>
+        </div>
+
+        <!-- Contact Form Below Social Media -->
+        <form class="contact-form">
+            <input type="text" placeholder="First Name" required>
+            <input type="text" placeholder="Last Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <input type="tel" placeholder="Phone" required>
+            <input type="text" placeholder="Subject">
+            <textarea rows="5" placeholder="Message"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>
+

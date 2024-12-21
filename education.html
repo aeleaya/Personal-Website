@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+body {
+    font-family: 'Georgia', serif;
+    background-image: url('grid_brown.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+}
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+            background-color: rgba(153, 117, 109, 0.95);
+            position: sticky;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 250px;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 18px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #6c3a1f, #9c6747);
+            text-align: center;
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .header a:hover {
+            background: linear-gradient(135deg, #fcf19a, #ffbf77);
+            color: #6c3a1f;
+            transform: scale(1.1);
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+            color: #5d4037;
+        }
+
+        .education-options {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+            max-width: 1200px;
+        }
+
+        .option {
+            background-color: #c1aca7;
+            border-radius: 10px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+            padding: 40px;
+            width: 300px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .option:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .option img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .option h3 {
+            margin-top: 15px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .details {
+            text-align: center;
+            display: none;
+            margin: 20px;
+            width: 80%;
+            max-width: 1000px;
+            background-color: #dcccbc;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .details h2 {
+            font-size: 2rem;
+            color: #3e2723;
+            margin-bottom: 20px;
+        }
+
+        .details table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        .details th, .details td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .details th {
+            background-color: #5d4037;
+            color: white;
+        }
+
+        .details tr:nth-child(even) {
+            background-color: #f1e6d9;
+        }
+
+        .details tr:hover {
+            background-color: #e2d3b3;
+        }
+
+        .details iframe {
+            border: 0;
+            width: 100%;
+            max-width: 700px;
+            height: 450px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #584215;
+            color: white;
+            padding: 8px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 13px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="homepage.html">Homepage</a>
+        <a href="biodata.html">Biodata</a>
+        <a href="experience.html">Experience</a>
+        <a href="education.html">Education</a>
+        <a href="family.html">Family</a>
+        <a href="friend.html">Friends</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="other.html">Contact Me</a>
+    </div>
+
+    <div class="content">
+        <h1>Education</h1>
+
+        <div class="education-options">
+            <div class="option" onclick="showDetails('primary')">
+                <img src="image/sk.png" alt="Primary School">
+                <h3>Primary Education</h3>
+            </div>
+
+            <div class="option" onclick="showDetails('secondary')">
+                <img src="image/smk.png" alt="Secondary School">
+                <h3>Secondary Education</h3>
+            </div>
+
+            <div class="option" onclick="showDetails('tertiary')">
+                <img src="image/uitm.png" alt="Tertiary Education">
+                <h3>Tertiary Education</h3>
+            </div>
+        </div>
+
+        <div id="primary" class="details">
+            <h2>Primary Education</h2>
+            <table>
+                <tr>
+                    <th>Institution</th>
+                    <th>Duration</th>
+                    <th>Semester in Total</th>
+                    <th>Address</th>
+                </tr>
+                <tr>
+                    <td>Sekolah Kebangsaan Gondang</td>
+                    <td>2011-2016</td>
+                    <td>6</td>
+                    <td>Kampung Gondang, Ketereh 16450 Kota Bharu Kelantan</td>
+                </tr>
+            </table>
+            <h2>Primary School Location</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3968.3837070592585!2d102.20490297398722!3d5.941738294042721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31b6a27d2e893913%3A0x4cb9f10958feead4!2sSK%20Gondang!5e0!3m2!1sen!2smy!4v1734574577207!5m2!1sen!2smy" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div id="secondary" class="details">
+            <h2>Secondary Education</h2>
+            <table>
+                <tr>
+                    <th>Institution</th>
+                    <th>Duration</th>
+                    <th>Years in Total</th>
+                    <th>Address</th>
+                </tr>
+                <tr>
+                    <td>SMU(A)Taqaddum Ilmi</td>
+                    <td>2017-2021</td>
+                    <td>5</td>
+                    <td>SMU(A) Taqaddumil Ilmi, Padang Tok Mat, 16450 Ketereh, Kota Bharu, Kelantan</td>
+                </tr>
+            </table>
+            <h2>High School Location</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3968.271717927954!2d102.2543187739874!3d5.957253894027376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31b6bdda49fac4b7%3A0xe0975fdad6d879b6!2sSMU%20(A)%20Taqqadum%20Ilmi!5e0!3m2!1sen!2smy!4v1734574555380!5m2!1sen!2smy" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div id="tertiary" class="details">
+            <h2>Tertiary Education</h2>
+            <table>
+                <tr>
+                    <th>Institution</th>
+                    <th>Course</th>
+                    <th>Duration</th>
+                    <th>Semester in Total</th>
+                    <th>Address</th>
+                </tr>
+                <tr>
+                    <td>Universiti Teknologi MARA (UiTM)</td>
+                    <td>Diploma in Information Management</td>
+                    <td>2022-2025</td>
+                    <td>5</td>
+                    <td>UiTM Kelantan campus Machang, Kampung Belukar, 18500 Bandar Machang, Kelantan</td>
+                </tr>
+            </table>
+            <h2>University Location</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.6947729231406!2d102.27349880000001!3d5.756997600000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31b68fe6f50d123f%3A0xaeb67217536d6442!2sUiTM%20Machang!5e0!3m2!1sen!2smy!4v1734574451608!5m2!1sen!2smy" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+    </div>
+
+    <script>
+        function showDetails(id) {
+            const details = document.querySelectorAll('.details');
+            details.forEach(detail => detail.style.display = 'none');
+
+            const target = document.getElementById(id);
+            target.style.display = 'block';
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
+

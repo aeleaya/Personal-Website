@@ -1,0 +1,274 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-image: url('grid_brown.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            color: #fff;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+            background-color: rgba(153, 117, 109, 0.95);
+            position: sticky;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 250px;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 18px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #6c3a1f, #9c6747);
+            text-align: center;
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .header a:hover {
+            background: linear-gradient(135deg, #fcf19a, #ffbf77);
+            color: #6c3a1f;
+            transform: scale(1.1);
+        }
+
+        .main-content {
+            margin: 20px;
+            padding: 20px;
+            border-radius: 12px;
+            background: transparent;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-y: auto;
+            color: #3e2723;
+        }
+
+        h1, h2 {
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 50px;
+            color: #5d4037;
+        }
+
+        h2 {
+            margin: 20px 0;
+            color: #3e2723;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1100px;
+        }
+
+  
+        .gallery-container img,
+        .gallery-container video {
+            border-radius: 8px;
+            width: 100%;
+            height: 100%;
+            max-width: 250px; 
+            max-height: 250px; 
+            object-fit: cover; 
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-container img:hover,
+        .gallery-container video:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #6b4f43, #3e2723);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .scroll-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .lightbox.show {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 12px;
+        }
+
+        .lightbox:after {
+            content: '✖';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="homepage.html">Homepage</a>
+        <a href="biodata.html">Biodata</a>
+        <a href="experience.html">Experience</a>
+        <a href="education.html">Education</a>
+        <a href="family.html">Family</a>
+        <a href="friend.html">Friends</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="other.html">Contact Me</a>
+    </div>
+
+    <div class="main-content">
+        <h1>Gallery</h1>
+
+        <h2>Photos</h2>
+        <div class="gallery-container">
+            <img src="image/gambar1.jpg" alt="Gallery Image 1">
+            <img src="image/ayam1.jpg" alt="Gallery Image 6">
+            <img src="image/ayam2.jpg" alt="Gallery Image 7">
+            <img src="image/ayam3.jpg" alt="Gallery Image 7">
+            <img src="image/flower1.jpg" alt="Gallery Image 8">
+            <img src="image/flower2.jpg" alt="Gallery Image 8">
+            <img src="image/pin1.jpg" alt="Gallery Image 8">
+            <img src="image/pin2.jpg" alt="Gallery Image 8">
+            <img src="image/pin3.jpg" alt="Gallery Image 8">
+            <img src="image/cat1.jpg" alt="Gallery Image 8">
+            <img src="image/random2.jpg" alt="Gallery Image 8">
+            <img src="image/random3.jpg" alt="Gallery Image 8">
+            <img src="image/random4.jpg" alt="Gallery Image 8">
+            <img src="image/random1.jpg" alt="Gallery Image 8">
+
+        </div>
+
+        <h2>Videos</h2>
+        <div class="gallery-container">
+            <video controls muted>
+                <source src="video/moja.mp4" type="video/mp4">
+                <source src="video/moja.ogg" type="video/ogg">
+            </video>
+            <video controls muted>
+                <source src="video/moon.mp4" type="video/mp4">
+                <source src="video/moon.ogg" type="video/ogg">
+            </video>
+            <video controls muted>
+                <source src="video/nature.mp4" type="video/mp4">
+                <source src="video/nature.ogg" type="video/ogg">
+            </video>
+        </div>
+    </div>
+
+    <button class="scroll-to-top" id="scrollToTop">&#8679;</button>
+
+    <div class="lightbox" id="lightbox">
+        <img src="" alt="Expanded Gallery Image">
+    </div>
+
+    <script>
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+        const images = document.querySelectorAll('.gallery-container img');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('show');
+            });
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.classList.remove('show');
+        });
+    </script>
+</body>
+</html>
